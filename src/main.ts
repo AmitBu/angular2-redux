@@ -1,6 +1,9 @@
 import {provider} from "ng2-redux";
+import store from "store/store";
 import {bootstrap} from "angular2/platform/browser";
-import {App} from "./app/app";
+import {App} from "./components/app";
 
-bootstrap(App)
+bootstrap(App, [
+  provider(store)
+])
     .catch(err => console.error(err));

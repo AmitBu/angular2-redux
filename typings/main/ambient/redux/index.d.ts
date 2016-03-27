@@ -50,5 +50,5 @@ declare namespace Redux {
 }
 
 declare module "redux" {
-    export = Redux;
+    export = Redux; 
 }

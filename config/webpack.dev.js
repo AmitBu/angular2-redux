@@ -20,7 +20,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
     'polyfills': './src/polyfills.ts',
-    'main': './src/main.browser.ts',
+    'main': './src/main.ts',
   },
 
   resolve: {

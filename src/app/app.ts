@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, Inject} from "angular2/core";
 
 @Component({
   selector: 'app',
@@ -6,4 +6,9 @@ import {Component} from "angular2/core";
   styles  : [`pre {font-size: 28px}`]
 })
 
-export class App {}
+export class App {
+
+  constructor() {
+  }
+
+}

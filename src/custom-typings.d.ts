@@ -29,6 +29,10 @@ import * as _ from 'lodash'
  *
  */
 
+declare module "ng2-redux" {
+  export function provider (value:any): any;
+  export function base (value:any): any;
+}
 
 // Extra variables that live on Global that will be replaced by webpack DefinePlugin
 declare var ENV: string;

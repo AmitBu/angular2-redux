@@ -4,9 +4,7 @@ import {bindActionCreators} from "redux";
 
 @Component({
   selector: 'app',
-  template: `
-    <h1>{{title}}</h1>             
-    `,
+  template: `<h1>{{title}}</h1>`,
   styles  : [`pre {font-size: 28px}`]
 })
 

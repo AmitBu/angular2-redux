@@ -33,6 +33,11 @@ declare module "ng2-redux" {
   export function provider (value:any): any;
 }
 
+declare module "redux-undo" {
+  export default function (value:any): any;
+  export let ActionCreators:any
+}
+
 // Extra variables that live on Global that will be replaced by webpack DefinePlugin
 declare var ENV: string;
 declare var HMR: boolean;

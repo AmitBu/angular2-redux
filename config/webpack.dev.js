@@ -64,6 +64,7 @@ module.exports = {
   devServer: {
     port: METADATA.port,
     host: METADATA.host,
+    inline: true,
     historyApiFallback: true,
     watchOptions: {
       aggregateTimeout: 300,

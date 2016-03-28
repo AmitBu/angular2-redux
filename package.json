@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "server": "npm run server:dev",
-    "server:dev": "node --max-old-space-size=4096 ./node_modules/webpack-dev-server/bin/webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
+    "server:dev": "node --max-old-space-size=4096 ./node_modules/webpack-dev-server/bin/webpack-dev-server --config config/webpack.dev.js --inline --hot --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
     "start": "npm run server",
     "typings-install": "typings install",
     "postinstall": "npm run typings-install"
@@ -17,6 +17,7 @@
     "core-js": "2.1.5",
     "ng2-redux": "2.0.2",
     "redux": "3.3.1",
+    "redux-undo": "^1.0.0-beta4",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.6.4"
   },

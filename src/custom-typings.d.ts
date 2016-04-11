@@ -29,14 +29,23 @@ import * as _ from 'lodash'
  *
  */
 
-declare module "ng2-redux" {
-  export function provider (value:any): any;
-}
+// declare module "ng2-redux" {
+//   export function provider (value:any): any;
+// }
+// declare module "angular2-redux-adaptor" {
+//   export function provider (value:any): any;
+//   export function MapState (value:any): any;
+//   export function BindActions (value:any): any;
+//   export function Store (value:any): any;
+// }
 
-declare module "redux-undo" {
-  export default function (value:any): any;
-  export let ActionCreators:any
-}
+//MapState, BindActions, Store
+
+//
+// declare module "redux-undo" {
+//   export default function (value:any): any;
+//   export let ActionCreators:any
+// }
 
 // Extra variables that live on Global that will be replaced by webpack DefinePlugin
 declare var ENV: string;

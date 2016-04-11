@@ -1,13 +1,14 @@
 {
   "dependencies": {
+    "lodash": "registry:npm/lodash#4.0.0+20160305082308",
     "redux": "registry:npm/redux#3.0.6+20160214194820",
     "zone.js": "github:gdi2290/typed-zone.js#66ea8a3451542bb7798369306840e46be1d6ec89"
   },
   "devDependencies": {},
   "ambientDependencies": {
-    "redux": "registry:dt/redux#1.0.0+20160317120654",
     "core-js": "registry:dt/core-js#0.0.0+20160317120654",
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#8cf8164641be73e8f1e652c2a5b967c7210b6729",
+    "redux": "registry:dt/redux#1.0.0+20160317120654",
     "webpack": "github:DefinitelyTyped/DefinitelyTyped/webpack/webpack.d.ts#95c02169ba8fa58ac1092422efbd2e3174a206f4"
   }
 }

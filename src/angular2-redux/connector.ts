@@ -5,6 +5,10 @@ import {isString, isFunction} from "./utils";
 // reference to the store
 let _store;
 
+export function initStore(store){
+  _store = store;
+}
+
 // wrap the store in an angular provider
 export function provider(store) {
   _store = store;
@@ -42,7 +46,6 @@ export function BindActions(actions) {
     }
   }
 }
-
 function mapStateSlice(target, prop, value) {
 
   if (isFunction(target[prop])) {

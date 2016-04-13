@@ -11,13 +11,26 @@ import {store} from '../store/store'
     template: `
         <h1>{{title}}</h1>
         <ItemsList [items]="items"> </ItemsList>
-        <button (click)="removeTitle('sdfsdf')">remove</button>
-        <button (click)="addItem('Amit')">Add item</button>
+        <button (click)="changeTitle('Title changed')">Change Title</button>
+        <button (click)="addItem('Anoter item')">Add item</button>
         `,
 })
 
 export class App {
     title = store.getState().app.title;
+
+    // TODO: Check why 'MapState' does not subscribe to state
+    // @MapState('app.title')
+    // public title;
+
+    @MapState('list.items')
+    public items;
+
+    @BindActions(changeTitle)
+    public changeTitle;
+
+    @BindActions(addItem)
+    public addItem;
 
     constructor() {
         console.log(store.getState());
@@ -34,16 +47,6 @@ export class App {
 
 
 
-    // @MapState('app.title')
-    // public title;
 
-    @MapState('list.items')
-    public items;
-
-    @BindActions(changeTitle)
-    public removeTitle;
-
-    @BindActions(addItem)
-    public addItem;
 
 }

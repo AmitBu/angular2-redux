@@ -4,10 +4,10 @@ import { app } from '../reducers/app-reducer'
 
 const state = {
     app: {
-        title: 'My app sssss'
+        title: 'My test app'
     },
     list: {
-        items: ["asdad","asdasd","asdasd", "Nir"]
+        items: ["Item1", "Item2", "Item3"]
     }
 };
 

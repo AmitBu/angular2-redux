@@ -1,6 +1,3 @@
-/**
- * Created by amit on 4/12/16.
- */
 import * as LIST from '../constansts/list-events'
 
 

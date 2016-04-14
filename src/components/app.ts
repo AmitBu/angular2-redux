@@ -1,27 +1,27 @@
 import {Component} from "angular2/core";
-import {MapState, BindActions} from "../angular2-redux/connector";
+import {MapState, BindActions} from "angular2-redux-bindings";
 import {changeTitle} from '../actions/app-actions'
-import {addItem} from '../actions/list-actions'
 import {ItemsList} from './itemsList'
 import {store} from '../store/store'
+import * as List from '../actions/list-actions'
 
 @Component({
     selector: 'app',
     directives: [ItemsList],
     template: `
         <h1>{{title}}</h1>
-        <ItemsList [items]="items"> </ItemsList>
         <button (click)="changeTitle('Title changed')">Change Title</button>
-        <button (click)="addItem('Anoter item')">Add item</button>
+        <ItemsList [items]="items" (clearList)="clearList()" (removeItem)="removeItems($event)"> </ItemsList>
+        <div>
+            <input #text />
+            <button (click)="addItem(text.value)">Add item</button>
+        </div>
         `,
 })
 
 export class App {
-    title = store.getState().app.title;
-
-    // TODO: Check why 'MapState' does not subscribe to state
-    // @MapState('app.title')
-    // public title;
+     @MapState('app.title')
+     public title;
 
     @MapState('list.items')
     public items;
@@ -29,24 +29,17 @@ export class App {
     @BindActions(changeTitle)
     public changeTitle;
 
-    @BindActions(addItem)
+    @BindActions(List.addItem)
     public addItem;
+
+    @BindActions(List.clearAllItems)
+    public clearList;
+
+    @BindActions(List.removeItem)
+    public removeItems;
 
     constructor() {
         console.log(store.getState());
         store.subscribe(() => console.log(store.getState()));
-
-        store.subscribe(() => {
-            this.title = store.getState().app.title;
-        });
-
-        store.subscribe(() => {
-            this.items = store.getState().list.items;
-        });
     }
-
-
-
-
-
 }

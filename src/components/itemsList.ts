@@ -1,17 +1,20 @@
-import {Component, EventEmitter} from 'angular2/core'
+import {Component, EventEmitter, Output } from 'angular2/core'
 
 @Component({
     selector: 'ItemsList',
     inputs:['items'],
-    outputs: ['listClick'],
     template: `
-        <button (click)="listClick.emit()">clear</button>
         <ul>
-          <li *ngFor="#item of items">{{item}}</li>
+          <li *ngFor="#item of items; #i = index" (click)="removeItem(i)">{{item}}</li>
         </ul>
+        <button (click)="clearList.emit()">clear</button>
         `
 })
 
 export class ItemsList {
-    listClick = new EventEmitter()
+    @Output() clearList = new EventEmitter();
+    @Output() removeItem = new EventEmitter();
+    
+    
 }
+

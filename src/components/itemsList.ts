@@ -4,17 +4,17 @@ import {Component, EventEmitter, Output } from 'angular2/core'
     selector: 'ItemsList',
     inputs:['items'],
     template: `
+        <p>Click on an item to remove him from the list</p>
+        <button (click)="clearList.emit()">Clear list</button>
         <ul>
-          <li *ngFor="#item of items; #i = index" (click)="removeItem(i)">{{item}}</li>
+          <li *ngFor="#item of items; #i = index" (click)="removeItem.emit(i)">{{item}}</li>
         </ul>
-        <button (click)="clearList.emit()">clear</button>
+        
         `
 })
 
 export class ItemsList {
     @Output() clearList = new EventEmitter();
-    @Output() removeItem = new EventEmitter();
-    
-    
+    @Output() removeItem = new EventEmitter<number>();
 }
 

@@ -11,7 +11,6 @@ export function addItem(item) {
 }
 
 export function removeItem(index) {
-    console.log("index: ", index);
     return {
         type: LIST.DELETE_ITEM,
         data: index
